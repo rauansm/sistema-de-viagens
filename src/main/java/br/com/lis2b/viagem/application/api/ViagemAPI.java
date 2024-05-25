@@ -18,10 +18,10 @@ public class ViagemAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.OK)
     public ViagemCotacaoResponse gerarCotacao(@RequestBody @Valid ViagemCotacaoRequest cotacaoRequest) {
-        log.info("[start] ViagemAPI - buscarViagens");
+        log.info("[start] ViagemAPI - gerarCotacao");
         log.info("[cotacaoRequest] {} ", cotacaoRequest);
         var cotacao = viagemService.gerarCotacao(cotacaoRequest);
-        log.info("[finish] ViagemAPI - buscarViagens");
+        log.info("[finish] ViagemAPI - gerarCotacao");
         return cotacao;
     }
 }
