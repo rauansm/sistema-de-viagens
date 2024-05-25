@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public enum ProblemType {
     REGISTRO_DUPLICADO("/dados-duplicado", "Dados duplicados"),
-    TRANSFERENCIA_NAO_AUTORIZADA("/transferência-nao-autorizada", "Transferência não autorizada"),
+    ACESSO_NEGADO("/acesso-negado", "Acesso negado"),
     ERRO_DE_SISTEMA("/erro-de-sistema", "Erro de sistema"),
     SERVICO_INDISPONIVEL("/servico-indisponivel", "Serviço indisponível"),
     MENSAGEM_INCOMPREENSIVEL("/mensagem-incompreensivel", "Mensagem incompreensível"),

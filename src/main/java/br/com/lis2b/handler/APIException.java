@@ -44,6 +44,9 @@ public class APIException extends RuntimeException {
 	public static APIException servicoIndisponivel(String message, Exception ex) {
 		return new APIException(HttpStatus.SERVICE_UNAVAILABLE, message,ex, ProblemType.SERVICO_INDISPONIVEL);
 	}
+	public static APIException build(HttpStatus statusException, String message, ProblemType problemType) {
+		return new APIException(statusException, message,  problemType);
+	}
 	public static APIException negocio(String message) {
 		return new APIException(HttpStatus.BAD_REQUEST, message, ProblemType.ERRO_NEGOCIO);
 	}
