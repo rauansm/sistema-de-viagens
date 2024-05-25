@@ -19,4 +19,15 @@ public class ViagemCotacaoResponse {
     private List<HospedagemResponse> hospedagens;
     private List<AluguelVeiculoResponse> alugueisVeiculos;
 
+    public ViagemCotacaoResponse(ViagemCotacaoRequest cotacaoRequest, List<VooResponse> voos,
+                                 List<HospedagemResponse> hospedagens, List<AluguelVeiculoResponse> alugueisVeiculos) {
+        this.codigoOrigem = cotacaoRequest.getCodigoOrigem();
+        this.codigoDestino = cotacaoRequest.getCodigoDestino();
+        this.quantidadePessoas = cotacaoRequest.getQuantidadePessoas();
+        this.dataIda = cotacaoRequest.getDataIda();
+        this.dataVolta = cotacaoRequest.getDataVolta();
+        this.voos = voos;
+        this.hospedagens = hospedagens;
+        this.alugueisVeiculos = alugueisVeiculos;
+    }
 }
