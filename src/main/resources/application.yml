@@ -1,1 +1,43 @@
-spring.application.name=reservas-viagens
+springdoc:
+  swagger-ui:
+    path: /public/swagger
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+viagem:
+  jwt:
+    expiracao: ${JWT_TEMPO_EXPIRACAO:15}
+    chave: ${JWT_CHAVE:123456}
+
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+    org.springframework.web: ${LOG_LEVEL:INFO}
+    org.hibernate: ${LOG_LEVEL:INFO}
+    br.com.lis2b: ${LOG_LEVEL:DEBUG}
+
+amadeus:
+  clientId: ${AMADEUS_CLIENT_ID:lOgvEO3Rn0R4yYdrog6eR9GQ3i6mYp12}
+  clientSecret: ${AMADEUS_CLIENT_SECRET:FcIDySJpV8Cz8ss3}
+  server: https://test.api.amadeus.com
+  tokenUrl: https://test.api.amadeus.com/v1/security/oauth2/token
