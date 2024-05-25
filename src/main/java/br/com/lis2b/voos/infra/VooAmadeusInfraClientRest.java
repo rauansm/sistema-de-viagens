@@ -1,5 +1,6 @@
 package br.com.lis2b.voos.infra;
 
+import br.com.lis2b.handler.APIException;
 import br.com.lis2b.viagem.application.api.ViagemCotacaoRequest;
 import br.com.lis2b.voos.application.service.VooClientRest;
 import br.com.lis2b.voos.dominio.FlightOfferResponse;
@@ -20,9 +21,8 @@ public class VooAmadeusInfraClientRest implements VooClientRest {
             FlightOfferResponse response = getFlightOfferResponse(cotacaoRequest);
             log.info("[finish] VooAmadeusInfraClientRest - buscaVoos");
             return response;
-        } catch (Exception e) {
-            log.error("[ERROR] VooAmadeusInfraClientRest - buscaVoos", e);
-            return null;
+        } catch (Exception ex) {
+            throw APIException.servicoIndisponivel("O sistema de voos está temporariamente indisponível.",ex);
         }
     }
 
