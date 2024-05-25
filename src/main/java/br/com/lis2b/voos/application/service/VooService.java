@@ -6,5 +6,5 @@ import br.com.lis2b.viagem.application.api.VooResponse;
 import java.util.List;
 
 public interface VooService {
-    List<VooResponse> buscarVoos(ViagemCotacaoRequest cotacaoRequest);
+    List<VooResponse> buscaVoos(ViagemCotacaoRequest cotacaoRequest);
 }

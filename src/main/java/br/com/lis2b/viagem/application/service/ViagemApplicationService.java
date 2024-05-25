@@ -4,7 +4,6 @@ import br.com.lis2b.aluguelveiculo.application.service.AluguelVeiculoService;
 import br.com.lis2b.hospedagem.application.service.HospedagemService;
 import br.com.lis2b.viagem.application.api.*;
 import br.com.lis2b.voos.application.service.VooService;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.scheduling.annotation.Async;
@@ -38,7 +37,7 @@ public class ViagemApplicationService implements ViagemService {
     @Async
     private CompletableFuture<List<VooResponse>> buscarVoosAsync(ViagemCotacaoRequest cotacaoRequest) {
         log.debug("[start] ViagemApplicationService - buscarVoosAsync");
-        var voos = vooService.buscarVoos(cotacaoRequest);
+        var voos = vooService.buscaVoos(cotacaoRequest);
         log.debug("[finish] ViagemApplicationService - buscarVoosAsync");
         return CompletableFuture.completedFuture(voos);
     }

@@ -10,7 +10,9 @@ import java.util.UUID;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
 @ToString
+@Builder
 public class AluguelVeiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
